@@ -2,6 +2,7 @@ api-mail
 ============
 An API REST to send massive mails
 
-## to run
+## to install
 npm i
+## to run
 npm start
