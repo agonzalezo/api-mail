@@ -29,18 +29,18 @@ spec:
           env:
             - name: PORT
               value: "3000"
-            - name: API_MONGO_URL
-              value: $API_MONGO_URL
             - name: API_LOG_LEVEL
-              value: $API_LOG_LEVEL
-            - name: API_SECRET
-              value: $API_SECRET
+              value: "$API_LOG_LEVEL"
             - name: API_NAME
-              value: $API_NAME
+              value: "$API_NAME"
             - name: API_MAIL_KEY
-              value: $API_MAIL_KEY
+              value: "$API_MAIL_KEY"
             - name: API_MAIL_USER
-              value: $API_MAIL_USER
+              value: "$API_MAIL_USER"
+            - name: SMTP_PORT
+              value: "$SMTP_PORT"
+            - name: SMTP_HOST
+              value: "$SMTP_HOST"
           resources:
             requests:
               memory: "70Mi"
