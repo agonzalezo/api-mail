@@ -9,6 +9,7 @@ const messageData = {}
 
 async function sendEmail(req, res) {
     try {
+        console.log(`Sending mail to: ${req.body.to}`)
         if (req.body.template === 'activation') {
             messageData.code = req.body.code
             messageData.currentTemplate = returnTemplate('activation', { code: req.body.code, name: req.body.name })
@@ -46,6 +47,11 @@ async function sendEmail(req, res) {
                     info
                 }
             )
+        } else {
+            res.status(400).json({
+                status: 'error',
+                message: 'Error sending email, please validate the email address'
+            })
         }
     } catch (error) {
         console.error(error)
